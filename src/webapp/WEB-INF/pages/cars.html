@@ -4,12 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
 </head>
 <body>
 <div>
-    <th:block th:each="msg : ${messages}">
-        <h1 th:text="${msg}"></h1>
-    </th:block>
+    <table>
+        <thead>
+            <tr>
+                <td>model</td>
+                <td>series</td>
+                <td>price</td>
+            </tr>
+        </thead>
+        <tbody>
+        <tr th:each="car : ${cars}">
+            <td th:text="${car.model}"></td>
+            <td th:text="${car.series}"></td>
+            <td th:text="${car.price}"></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>
